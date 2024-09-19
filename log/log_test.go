@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	log_v1 "0245555_SistemasDistribuidos/RPC/api/v1"
+	//log_v1 "0245555_SistemasDistribuidos/RPC/api/v1"
 	api "0245555_SistemasDistribuidos/api/v1"
 
 	"github.com/stretchr/testify/require"
@@ -59,7 +59,7 @@ func testAppendRead(t *testing.T, log *Log) {
 func testOutOfRangeErr(t *testing.T, log *Log) {
 	read, err := log.Read(1)
 	require.Nil(t, read)
-	apiErr := err.(log_v1.ErrOffsetOutOfRange)
+	apiErr := err.(api.ErrOffsetOutOfRange)
 	require.Equal(t, uint64(1), apiErr.Offset)
 }
 

@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 
-	log_v1 "0245555_SistemasDistribuidos/RPC/api/v1"
+	//log_v1 "0245555_SistemasDistribuidos/RPC/api/v1"
 	api "0245555_SistemasDistribuidos/api/v1"
 
 	"google.golang.org/grpc"
@@ -83,7 +83,7 @@ func (s *grpcServer) ConsumeStream(req *api.ConsumeRequest, stream api.Log_Consu
 			res, err := s.Consume(stream.Context(), req)
 			switch err.(type) {
 			case nil:
-			case log_v1.ErrOffsetOutOfRange:
+			case api.ErrOffsetOutOfRange:
 				continue
 			default:
 				return err

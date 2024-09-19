@@ -12,7 +12,7 @@ import (
 	"strings"
 	"sync"
 
-	log_v1 "0245555_SistemasDistribuidos/RPC/api/v1"
+	//log_v1 "0245555_SistemasDistribuidos/RPC/api/v1"
 	api "0245555_SistemasDistribuidos/api/v1"
 )
 
@@ -109,7 +109,7 @@ func (l *Log) Read(off uint64) (*api.Record, error) {
 	}
 	// START: before
 	if s == nil || s.nextOffset <= off {
-		return nil, log_v1.ErrOffsetOutOfRange{Offset: off}
+		return nil, api.ErrOffsetOutOfRange{Offset: off}
 	}
 	// END: before
 	return s.Read(off)

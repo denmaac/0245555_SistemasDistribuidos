@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	log_v1 "0245555_SistemasDistribuidos/RPC/api/v1"
+	//log_v1 "0245555_SistemasDistribuidos/RPC/api/v1"
 	api "0245555_SistemasDistribuidos/api/v1" // Cambien esto por la ruta en su máquina
 	log "0245555_SistemasDistribuidos/log"    // Cambien esto por la ruta en su máquina
 
@@ -129,7 +129,7 @@ func testConsumePastBoundary(
 		t.Fatal("consume not nil")
 	}
 	got := status.Code(err)
-	want := status.Code(log_v1.ErrOffsetOutOfRange{}.GRPCStatus().Err())
+	want := status.Code(api.ErrOffsetOutOfRange{}.GRPCStatus().Err())
 	if got != want {
 		t.Fatalf("got err: %v, want: %v", got, want)
 	}

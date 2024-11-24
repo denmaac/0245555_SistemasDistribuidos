@@ -10,19 +10,17 @@ import (
 	api "0245555_SistemasDistribuidos/api/v1" // Cambien esto por la ruta en su máquina
 	//log "0245555_SistemasDistribuidos/log"    // Cambien esto por la ruta en su máquina
 
-	"github.com/denmaac/0245555_SistemasDistribuidos/auth"
-	tlsconfig "github.com/denmaac/0245555_SistemasDistribuidos/config"
-	
-	"github.com/denmaac/0245555_SistemasDistribuidos/log"
+	"0245555_SistemasDistribuidos/auth"
+	tlsconfig "0245555_SistemasDistribuidos/config"
+
+	"0245555_SistemasDistribuidos/log"
+
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/status"
-	
-	"google.golang.org/grpc/credentials/insecure"
-	
- 
+	//"google.golang.org/grpc/credentials/insecure"
 )
 
 func TestServer(t *testing.T) {
